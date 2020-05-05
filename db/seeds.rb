@@ -1,11 +1,11 @@
 p "Seeding"
-# user = User.create(
-#   username: "admin",
-#   email: "admin@admin.com",
-#   password: "password123",
-#   password_confirmation: "password123",
-#   status: 69
-# )
+user = User.create(
+  username: "admin",
+  email: "admin@admin.com",
+  password: "password123",
+  password_confirmation: "password123",
+  status: 69
+)
 
 10.times do 
   user = User.new(
@@ -33,8 +33,8 @@ end
 end
   p 'images created 🎆'
 
-# User.all.each do |user| 
-#   user.post.create(
-#     content: Faker::JapaneseMedia::OnePiece.quote
-#   )
-# end
+User.all.each do |user| 
+  user.post.create(
+    content: Faker::JapaneseMedia::OnePiece.quote
+  )
+end
