@@ -18,12 +18,7 @@ user = User.create(
 end
   p 'users created 🙋‍♀️'
 
-10.times do 
-  Tag.create(
-    tag: Faker::Dessert.variety
-  )
-end
-  p 'tags created 🏷'
+
 
 5.times do |i|
   Image.create(
@@ -39,13 +34,14 @@ end
   )
 
 end
-5.times do |i|
-  pots = PostTag.new(
-    tag_id: i+1,
-    post_id: i+1
-  ) 
-  p pots.save
+Post.all.each do |post|
+	2.times do 
+		post.tags.create(
+			tag: Faker::Dessert.variety
+		)
+	end
 end
+p 'tags created 🏷'
 p "complete"
 
 # User.all.each do |user| 
