@@ -18,3 +18,8 @@ user.save!
     user.save!
 end
 
+User.all.each do |user| 
+    user.post.create(
+        content: Faker::JapaneseMedia::OnePiece.quote
+    )
+end
