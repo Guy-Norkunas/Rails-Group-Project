@@ -28,11 +28,12 @@ end
 end
   p 'images created 🎆'
 
-5.times do |i|
-  Post.create(
-    image_id: i + 1 
+User.all.each do |user|
+	i = 1
+  user.posts.create(
+    content: "#{i + 1}" 
   )
-
+	i += 1
 end
 Post.all.each do |post|
 	2.times do 

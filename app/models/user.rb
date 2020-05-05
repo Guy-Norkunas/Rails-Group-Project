@@ -6,6 +6,5 @@ class User < ApplicationRecord
 
   has_many :images
 
-  has_many :users_posts
-  has_many :posts, through: :users_posts
+  has_many :posts
 end
