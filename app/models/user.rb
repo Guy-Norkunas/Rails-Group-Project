@@ -5,4 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :images
+
+  has_many :users_posts
+  has_many :posts, through: :users_posts
 end
