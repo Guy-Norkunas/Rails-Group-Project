@@ -1,4 +1,4 @@
-p "Seeding"
+p "Seeding 💦🐶"
 user = User.create(
   username: "admin",
   email: "admin@admin.com",
@@ -32,6 +32,21 @@ end
   )
 end
   p 'images created 🎆'
+
+5.times do |i|
+  Post.create(
+    image_id: i + 1 
+  )
+
+end
+5.times do |i|
+  pots = PostTag.new(
+    tag_id: i+1,
+    post_id: i+1
+  ) 
+  p pots.save
+end
+p "complete"
 
 # User.all.each do |user| 
 #   user.post.create(
