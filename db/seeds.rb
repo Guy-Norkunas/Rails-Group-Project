@@ -7,8 +7,21 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 user = User.new(
-    :email                 => "admin@gmail.com",
-    :password              => "password123",
-    :password_confirmation => "password123"
+    username: "admin",
+    email: "admin@admin.com",
+    password: "password123",
+    password_confirmation: "password123"
 )
+
 user.save!
+
+10.times do 
+    user = User.new(
+        username: Faker::Name.name,
+        email: Faker::Internet.email,
+        password: "password123",
+        password_confirmation: "password123"
+    )
+    user.save!
+end
+
