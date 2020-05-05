@@ -1,28 +1,55 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
-user = User.new(
-    username: "admin",
-    email: "admin@admin.com",
-    password: "password123",
-    password_confirmation: "password123",
-    status: 69
+p "Seeding 💦🐶"
+user = User.create(
+  username: "admin",
+  email: "admin@admin.com",
+  password: "password123",
+  password_confirmation: "password123",
+  status: 69
 )
 
-user.save!
+10.times do 
+  user = User.new(
+    username: Faker::Name.name,
+    email: Faker::Internet.email,
+    password: "password123",
+    password_confirmation: "password123"
+  )
+  user.save!
+end
+  p 'users created 🙋‍♀️'
 
 10.times do 
-    user = User.new(
-        username: Faker::Name.name,
-        email: Faker::Internet.email,
-        password: "password123",
-        password_confirmation: "password123"
-    )
-    user.save!
+  Tag.create(
+    tag: Faker::Dessert.variety
+  )
 end
+  p 'tags created 🏷'
 
+5.times do |i|
+  Image.create(
+    location: "app/assets/images/#{i}seed.jpeg",
+    user_id: i
+  )
+end
+  p 'images created 🎆'
+
+5.times do |i|
+  Post.create(
+    image_id: i + 1 
+  )
+
+end
+5.times do |i|
+  pots = PostTag.new(
+    tag_id: i+1,
+    post_id: i+1
+  ) 
+  p pots.save
+end
+p "complete"
+
+# User.all.each do |user| 
+#   user.post.create(
+#     content: Faker::JapaneseMedia::OnePiece.quote
+#   )
+# end
