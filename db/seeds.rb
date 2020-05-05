@@ -33,8 +33,8 @@ end
 end
   p 'images created 🎆'
 
-User.all.each do |user| 
-  user.post.create(
-    content: Faker::JapaneseMedia::OnePiece.quote
-  )
-end
+# User.all.each do |user| 
+#   user.post.create(
+#     content: Faker::JapaneseMedia::OnePiece.quote
+#   )
+# end
