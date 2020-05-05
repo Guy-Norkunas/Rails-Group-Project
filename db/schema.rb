@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2020_05_05_095426) do
+=======
+ActiveRecord::Schema.define(version: 2020_05_05_095506) do
+>>>>>>> 0e1fb94f87cb8078cfe62bccb563d53a8374fe0e
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,10 +65,10 @@ ActiveRecord::Schema.define(version: 2020_05_05_095426) do
   end
 
   create_table "users_posts", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "post_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "post_id", null: false
-    t.bigint "user_id", null: false
     t.index ["post_id"], name: "index_users_posts_on_post_id"
     t.index ["user_id"], name: "index_users_posts_on_user_id"
   end
