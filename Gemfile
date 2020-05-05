@@ -50,3 +50,5 @@ gem "devise", "~> 4.7"
 gem "cancancan", "~> 3.1"
 
 gem "rspec-rails", "~> 4.0", :groups => [:development, :test]
+
+gem "capybara", "~> 3.32", :groups => [:development, :test]
