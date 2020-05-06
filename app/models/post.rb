@@ -1,6 +1,6 @@
 class PostValidator < ActiveModel::Validator
   def validate(post)
-    unless !post.images.empty? || post.content
+    unless !post.images.empty? || (post.content)
       post.errors[:content] << 'Needs either content or an image to be a valid post'
     end
   end
