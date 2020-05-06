@@ -1,1 +1,9 @@
-<h1>Hi :)</h1>
+<%= render 'shared/nav', title: "Homepage"  %>
+
+<%= form_with scope: :post, local: true, url: "/post" do |f| %>
+  <%= f.label :content %>
+  <%= f.text_area :content, size: "40x2" %>
+  <%= f.submit "Post" %>
+<% end %>
+
+<%= render 'shared/post' %>

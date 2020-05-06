@@ -1,5 +1,4 @@
 class Tag < ApplicationRecord
-  Max_length = 20
 
   # associations
 
@@ -8,5 +7,5 @@ class Tag < ApplicationRecord
 
   # validations
 
-  validates :tag, presence: true, length: { maximum: Max_length }
+  validates :tag, presence: true, length: { maximum: 20 }
 end

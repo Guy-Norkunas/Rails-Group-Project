@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  root "posts#index"
-  get "post/index", to: "post#index"
-  resources :posts
+  root "post#index"
+  resources :post
   devise_for :users
+
+  get "/home", to: "post#index", as: "home_page"
+
+  get "/profile/:id", to: "profile#show", as: "show_profile"
+  get "/profile", to: "profile#index", as: "user_profile"
+
 end

@@ -1,9 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  subject { described_class.create(
-    content: "I have so much test aha",
-    user_id: 1
+  let (:user){User.first}
+
+ 
+
+  subject { user.posts.create(
+    content: "I have so much test aha"
   )}
   context 'validations' do
     it 'should exist when given valid attributes' do
@@ -31,8 +34,15 @@ RSpec.describe Post, type: :model do
 
     it 'should be valid with just an image' do
       subject.content = nil
-      subject.images.create(url: "test")
+      subject.save
+      subject.images.new(url: "testurl")
       expect(subject).to be_valid
+    end
+  end
+
+  context 'associations' do
+    it "should be able to view user associated with post" do
+      expect(subject.user.id).to eql(user.id)
     end
   end
 end

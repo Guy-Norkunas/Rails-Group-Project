@@ -1,3 +1,11 @@
+class ImageValidator < ActiveModel::Validator
+  def validate(image)
+    if Image.exists?(url: image.url)
+      image.errors[:url] << 'This image url is already in use'
+    end
+  end
+end
+
 class Image < ApplicationRecord
   # associations
 
@@ -6,4 +14,5 @@ class Image < ApplicationRecord
   # validations
 
   validates :url, presence: true, length: { minimum: 3, maximum: 254 }
+  validates_with ImageValidator
 end
