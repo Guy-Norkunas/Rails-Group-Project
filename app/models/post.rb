@@ -19,6 +19,7 @@ class Post < ApplicationRecord
 
   #validations
 
+  validates :user_id, presence: true
   validates_with PostValidator
   
 end
