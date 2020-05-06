@@ -26,6 +26,12 @@ RSpec.describe Image, type: :model do
       subject.url = nil
       expect(subject).to_not be_valid
     end
+
+    it 'should not be possible to use duplicate url' do
+      subject.save
+      temp = user.images.new(url: "valid_url")
+      expect(temp).to_not be_valid
+    end
     
   end
 end

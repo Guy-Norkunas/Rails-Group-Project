@@ -31,7 +31,7 @@ RSpec.describe Post, type: :model do
 
     it 'should be valid with just an image' do
       subject.content = nil
-      subject.images.create(url: "test")
+      subject.images.new(url: "testurl")
       expect(subject).to be_valid
     end
   end

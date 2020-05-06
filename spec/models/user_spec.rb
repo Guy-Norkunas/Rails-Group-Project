@@ -63,7 +63,7 @@ RSpec.describe User, type: :model do
 
     it "user can make images" do
       subject.save
-      temp = subject.images.create(url: "testurl")
+      temp = subject.images.new(url: "super unique url")
       expect(temp).to be_valid
     end
 
