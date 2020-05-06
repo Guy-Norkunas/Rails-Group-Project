@@ -31,6 +31,10 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rubocop'
+  gem 'rubocop-performance'
+  gem 'rubocop-rails'
+  gem 'rubocop-rspec'
 end
 
 group :development do
@@ -56,3 +60,4 @@ gem "capybara", "~> 3.32", :groups => [:development, :test]
 gem "aws-sdk-s3", "~> 1.63"
 
 gem "faker", "~> 2.11"
+
