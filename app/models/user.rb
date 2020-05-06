@@ -1,8 +1,5 @@
 class MyValidator < ActiveModel::Validator
   def validate(user)
-     p "---------------"
-     p User.all
-     p "---------------"
     if User.find_by_username(user.username)
       user.errors[:username] << 'Username already exists'
     end

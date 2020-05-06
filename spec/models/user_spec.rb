@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  subject { described_class.create(
+  subject { described_class.new(
 		username: "guy",
 		email: "guy@gmail.com",
 		password: "password123",
@@ -10,7 +10,7 @@ RSpec.describe User, type: :model do
 	
 	context 'validations' do
     it 'should exist when given valid attributes' do
-      expect(subject).to be_valid
+      expect(subject.save).to eql(true)
     end
 
     it 'should not be created without a username' do
