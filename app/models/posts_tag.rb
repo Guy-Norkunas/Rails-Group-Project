@@ -10,10 +10,6 @@ class PostsTagValidator < ActiveModel::Validator
       return false
     end
 
-    if PostsTag.find_by(post_id: posttag.post_id).tag_id == posttag.tag_id
-      posttag.errors[:post_id] << 'This post already has this tag'
-      false
-    end
   end
 end
 
