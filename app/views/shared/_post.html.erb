@@ -1,0 +1,11 @@
+<% @posts.all.each do |post| %>
+    <p><%= link_to "#{post.user.username}", show_profile_path(post.user) %>
+    <%= post.content %>
+    <%= link_to "Show", post_path(post) %>
+
+    <% if post.user == current_user %>
+        <%= link_to "edit", edit_post_path(post) %>
+        <%= link_to "delete", post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %></p>
+
+<% end %>
