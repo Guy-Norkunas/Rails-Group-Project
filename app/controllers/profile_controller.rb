@@ -4,6 +4,7 @@ class ProfileController < ApplicationController
         @posts = current_user.posts
     end
     def show
-        @posts = User.find(params[:id]).posts
+        @user = User.find(params[:id])
+        @posts = @user.posts
     end
 end
