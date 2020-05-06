@@ -20,7 +20,7 @@ p 'users created 🙋‍♀️'
 
 User.all.each do |user|
 	user.images.create(
-		url: "test"
+		url: "#{user.username}image"
 	)
 end
 

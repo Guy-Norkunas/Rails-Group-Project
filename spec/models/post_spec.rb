@@ -1,12 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  let (:user){User.create(
-    username: Faker::JapaneseMedia::SwordArtOnline.game_name,
-    email: Faker::Internet.email,
-    password: "password123",
-    password_confirmation: "password123"
-  )}
+  let (:user){User.first}
 
  
 
