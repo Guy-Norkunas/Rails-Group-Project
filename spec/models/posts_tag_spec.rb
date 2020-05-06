@@ -28,5 +28,10 @@ RSpec.describe PostsTag, type: :model do
       expect(subject).to_not be_valid
     end
 
+    it "should be invalid if the tag it links to doesn't exist" do
+      subject.post_id = Tag.last.id + 1
+      expect(subject).to_not be_valid
+    end
+
 	end
 end
