@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_05_143232) do
+ActiveRecord::Schema.define(version: 2020_05_06_002040) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,19 +37,20 @@ ActiveRecord::Schema.define(version: 2020_05_05_143232) do
   end
 
   create_table "images", force: :cascade do |t|
-    t.string "location"
-    t.bigint "user_id", null: false
+    t.string "imageable_type", null: false
+    t.bigint "imageable_id", null: false
+    t.string "url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_images_on_user_id"
+    t.index ["imageable_type", "imageable_id"], name: "index_images_on_imageable_type_and_imageable_id"
   end
 
   create_table "posts", force: :cascade do |t|
     t.string "content"
-    t.bigint "image_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["image_id"], name: "index_posts_on_image_id"
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "posts_tags", force: :cascade do |t|
@@ -82,8 +83,7 @@ ActiveRecord::Schema.define(version: 2020_05_05_143232) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "images", "users"
-  add_foreign_key "posts", "images"
+  add_foreign_key "posts", "users"
   add_foreign_key "posts_tags", "posts"
   add_foreign_key "posts_tags", "tags"
 end
