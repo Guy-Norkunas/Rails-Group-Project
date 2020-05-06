@@ -2,10 +2,10 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
   subject { described_class.create(
-      content: "I have so much test aha",
-      user_id: 1
-    )}
-    
+    content: "I have so much test aha",
+    user_id: 1
+  )}
+  context 'validations' do
     it 'should exist when given valid attributes' do
       expect(subject.save).to eql(true)
     end
@@ -34,4 +34,5 @@ RSpec.describe Post, type: :model do
       subject.images.create(url: "test")
       expect(subject).to be_valid
     end
+  end
 end
