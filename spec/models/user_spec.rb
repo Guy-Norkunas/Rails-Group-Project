@@ -13,6 +13,10 @@ RSpec.describe User, type: :model do
       expect(subject.save).to eql(true)
     end
 
+    it 'should be valid when given valid attributes' do
+      expect(subject).to be_valid
+    end
+
     it 'should not be created without a username' do
       subject.username = nil
       expect(subject).to_not be_valid
