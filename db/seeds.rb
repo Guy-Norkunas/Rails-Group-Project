@@ -16,17 +16,16 @@ user = User.create(
   )
   user.save!
 end
-  p 'users created 🙋‍♀️'
+p 'users created 🙋‍♀️'
 
+User.all.each do |user|
+	user.images.create(
+		url: "test"
+	)
 
-
-5.times do |i|
-  Image.create(
-    location: "app/assets/images/#{i}seed.jpeg",
-    user_id: i
-  )
 end
-  p 'images created 🎆'
+
+p 'images created 🎆'
 
 User.all.each do |user|
 	i = 1
