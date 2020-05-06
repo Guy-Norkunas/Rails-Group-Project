@@ -54,5 +54,23 @@ RSpec.describe User, type: :model do
       temp = subject.posts.create(content: "pls work")
       expect(temp).to be_valid
     end
+
+    it "user can't make invalid posts" do
+      subject.save
+      temp = subject.posts.create(content: nil)
+      expect(temp).to_not be_valid
+    end
+
+    it "user can make images" do
+      subject.save
+      temp = subject.images.create(url: "testurl")
+      expect(temp).to be_valid
+    end
+
+    it "user can't make invalid images" do
+      subject.save
+      temp = subject.images.create(url: nil)
+      expect(temp).to_not be_valid
+    end
   end
 end

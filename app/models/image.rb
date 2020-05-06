@@ -1,3 +1,5 @@
+
+
 class Image < ApplicationRecord
   # associations
 
