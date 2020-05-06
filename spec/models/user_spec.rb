@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe PostsTag, type: :model do
+RSpec.describe User, type: :model do
   subject { described_class.new(
     
 	)}

@@ -6,4 +6,8 @@ class User < ApplicationRecord
 
   has_many :posts
   has_many :images, as: :imageable
+
+  validates :username, presence: true
+  validates :status, presence: true
+  validates :email, presence: true, legnth: {minimum: 3, maximum: 254}
 end
