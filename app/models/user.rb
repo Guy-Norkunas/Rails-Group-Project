@@ -8,13 +8,16 @@ end
 
 class User < ApplicationRecord
   include ActiveModel::Validations
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  #associations
+
   has_many :posts
   has_many :images, as: :imageable
+
+  #validations
 
   validates :username, presence: true
   validates :status, presence: true
