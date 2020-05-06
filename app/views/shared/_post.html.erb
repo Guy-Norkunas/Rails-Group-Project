@@ -1,4 +1,4 @@
 <% @posts.all.each do |post| %>
-    <p><%= post.user.username %>
+    <p><%= link_to "#{post.user.username}" %>
     <%= post.content %></p>
 <% end %>
