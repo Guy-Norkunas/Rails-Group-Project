@@ -1,3 +1,11 @@
+class PostValidator < ActiveModel::Validator
+  def validate(post)
+    if !((post.images.length > 0) || (post.content))
+      post.errors[:content] << 'Needs either content or an image to be a valid post'
+    end
+  end
+end
+
 class Post < ApplicationRecord
 
   #associations
@@ -9,5 +17,8 @@ class Post < ApplicationRecord
 
   has_many :images, as: :imageable
 
+  #validations
+
+  validates_with PostValidator
   
 end
