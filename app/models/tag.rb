@@ -1,13 +1,12 @@
 class Tag < ApplicationRecord
-    Max_length = 20
+  Max_length = 20
 
-    #associations
+  # associations
 
-    has_many :posts_tags
-    has_many :posts, through: :posts_tags
+  has_many :posts_tags
+  has_many :posts, through: :posts_tags
 
-    #validations
+  # validations
 
-    validates :tag, presence: true, length: {maximum: Max_length}
-
+  validates :tag, presence: true, length: { maximum: Max_length }
 end

@@ -1,10 +1,9 @@
 class Image < ApplicationRecord
-
-  #associations
+  # associations
 
   belongs_to :imageable, polymorphic: true
 
-  #validations
+  # validations
 
-  validates :url, presence: true, length: {minimum: 3, maximum: 254}
+  validates :url, presence: true, length: { minimum: 3, maximum: 254 }
 end
