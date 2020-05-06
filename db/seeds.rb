@@ -34,6 +34,10 @@ User.all.each do |user|
     content: "#{i + 1}" 
   )
 	i += 1
+	user.posts.create(
+    content: "#{i + 1}" 
+	)
+	i += 1
 end
 Post.all.each do |post|
 	2.times do 
