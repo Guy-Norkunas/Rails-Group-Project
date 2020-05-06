@@ -31,8 +31,14 @@ RSpec.describe Post, type: :model do
 
     it 'should be valid with just an image' do
       subject.content = nil
-      subject.images.create(url: "test")
+      subject.images.new(url: "testurl")
       expect(subject).to be_valid
+    end
+  end
+
+  context 'associations' do
+    it "should be able to view user associated with post" do
+      expect(subject.user.id).to eql(1)
     end
   end
 end
