@@ -46,5 +46,13 @@ RSpec.describe User, type: :model do
       )
       expect(temp_user).to_not be_valid
     end
-	end
+  end
+  
+  context 'associations' do
+    it 'should be able to make posts through user' do
+      subject.save
+      temp = subject.posts.create(content: "pls work")
+      expect(temp).to be_valid
+    end
+  end
 end
