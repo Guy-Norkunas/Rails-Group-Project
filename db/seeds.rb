@@ -16,7 +16,6 @@ user = User.create(
   )
 end
 
-sleep(0.5)
 p 'users created 🙋‍♀️'
 
 User.all.each do |user|
@@ -25,7 +24,6 @@ User.all.each do |user|
 	)
 end
 
-sleep(0.5)
 p 'images created 🎆'
 
 User.all.each do |user|
@@ -40,7 +38,6 @@ User.all.each do |user|
 	i += 1
 end
 
-sleep(0.5)
 p 'posts created 🥴'
 
 Post.all.each do |post|
@@ -51,9 +48,5 @@ Post.all.each do |post|
 	end
 end
 
-sleep(0.5)
 p 'tags created 🏷'
-
-
-sleep(0.5)
 p "complete"
