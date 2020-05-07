@@ -1,3 +1,13 @@
+<%= render 'shared/nav', title: "post" %>
+
 <p><%= link_to "#{@post.user.username}", show_profile_path(@post.user) %>
 <%= @post.content %></p>
 <p><%= link_to "back", :back  %></p>
+
+<%= form_with scope: :comment, local: true, url: post_comments_url(@post) do |f| %>
+  <%= f.label :comment %>
+  <%= f.text_area :comment, size: "40x2" %>
+  <%= f.submit "Comment" %>
+<% end %>
+
+<%= render 'shared/comment' %>
