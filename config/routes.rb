@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root "post#index"
   resources :post do
-    resources :comment
+    resources :comments
   end
   devise_for :users
 
