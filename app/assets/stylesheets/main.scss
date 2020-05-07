@@ -1,18 +1,13 @@
 @use "sass:math";
 
 @import 'styles/homepage/post';
-@import 'styles/shared/navbar';
+@import 'styles/shared/nav';
 
 body {
   margin: 0px;
+  padding-top: 135px;
 }
 
+$nav-color: cornflowerblue;
 
-$grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-  xxl: 1500px
-) !default;
+
