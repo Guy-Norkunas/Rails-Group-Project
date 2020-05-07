@@ -9,12 +9,22 @@ class CommentsController < ApplicationController
         end
     end
 
-    def edit
-        @comment
+    def show
+        @comment = Comment.find(params[:id])
     end
 
     def destroy
-        
+        Comment.find(params[:id]).destroy
+        redirect_to post_path(params[:post_id])
+    end
+
+    def update
+        comment = Comment.find(params[:id])
+        if comment.update(comment_params)
+          redirect_to comment.post
+        else
+          render 'show'
+        end
     end
 
     private

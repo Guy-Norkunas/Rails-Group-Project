@@ -1,0 +1,5 @@
+<%= form_with scope: :comment, model: @comment, local: true, url: post_comment_path(@comment), method: :patch do |f| %>
+  <%= f.label :comment %>
+  <%= f.text_area :comment, size: "40x2" %>
+  <%= f.submit "Edit comment" %>
+<% end %>
