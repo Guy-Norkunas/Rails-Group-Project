@@ -4,8 +4,8 @@
     <%= comment.comment %>
 
     <% if comment.user == current_user %>
-        <%= link_to "edit", edit_post_comment_path(comment) %>
-        <%= link_to "delete", post_comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to "edit", [comment.post, comment] %>
+        <%= link_to "delete", [comment.post, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
     <% end %></p>
 
 <% end %>
