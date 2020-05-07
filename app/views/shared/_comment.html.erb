@@ -1,0 +1,11 @@
+<h3>Comments:</h3>
+<% @comments.all.each do |comment| %>
+    <p><%= link_to "#{comment.user.username}", show_profile_path(comment.user) %>
+    <%= comment.comment %>
+
+    <% if comment.user == current_user %>
+        <%= link_to "edit", [comment.post, comment] %>
+        <%= link_to "delete", [comment.post, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %></p>
+
+<% end %>
