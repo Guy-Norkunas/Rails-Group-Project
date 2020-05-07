@@ -1,4 +1,4 @@
-p "Seeding 💦🐶"
+p "Seeding"
 user = User.create(
   username: "admin",
   email: "admin@admin.com",
