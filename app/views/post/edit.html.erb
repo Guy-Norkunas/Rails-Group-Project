@@ -1,5 +1,5 @@
 <%= form_with scope: :post, model: @post, local: true, url: post_path(@post), method: :patch do |f| %>
   <%= f.label :content %>
   <%= f.text_area :content, size: "40x2" %>
-  <%= f.submit "Post" %>
+  <%= f.submit "Edit post" %>
 <% end %>
