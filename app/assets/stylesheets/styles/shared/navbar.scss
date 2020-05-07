@@ -1,0 +1,11 @@
+#navbar {
+  display: flex;
+  justify-content: center;
+  border-bottom: 5px solid black;
+  #page-title {
+    font-size: 5em;
+  }
+  #logout {
+    align-self: flex-end;
+  }
+}
