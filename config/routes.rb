@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root "post#index"
-  resources :post
+  resources :post do
+    resources :comment
+  end
   devise_for :users
 
   get "/home", to: "post#index", as: "home_page"
