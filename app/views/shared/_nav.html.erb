@@ -1,6 +1,8 @@
-<div id = "navbar">
-  <span id = 'home'><%= link_to 'home', home_page_path %></span>
-  <span id = 'profile'><%= link_to 'profile', user_profile_path %></span>
-  <span id = 'page-title'><%= title %></span>
-  <span id = 'logout'><%= link_to 'logout', destroy_user_session_path, method: :delete %></span>
+<div id="navbar" class="navbar fixed-top navbar-light">
+  <div>
+    <span id='home'><%= link_to 'home', home_page_path %></span>
+    <span id='profile'><%= link_to 'profile', user_profile_path %></span>
+  </div>
+  <h1 id='page-title'><%= title %></h1>
+  <span id='logout'><%= link_to 'logout', destroy_user_session_path, method: :delete %></span>
 </div>

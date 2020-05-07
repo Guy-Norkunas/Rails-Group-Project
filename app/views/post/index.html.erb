@@ -1,11 +1,16 @@
 <%= render 'shared/nav', title: "Homepage"  %>
-
-<%= form_with scope: :post, local: true, url: "/post" do |f| %>
-  <%= f.label :content %>
-  <%= f.text_area :content, size: "40x2" %>
-  <%= f.submit "Post" %>
-<% end %>
-
 <div class="container">
-  <%= render 'shared/post' %>
+	<div class="row justify-content-center">
+		<div class = "card col-lg-10">
+			<%= form_with scope: :post, local: true, url: "/post" do |f| %>
+				<%= f.label :content %>
+				<%= f.text_area :content, size: "40x2" %>
+				<%= f.submit "Post" %>
+			<% end %>
+		</div>
+	</div>
+
+	<div class="row justify-content-center">
+		<%= render 'shared/post'%>
+	</div>
 </div>
