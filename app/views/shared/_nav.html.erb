@@ -1,4 +1,6 @@
-<span><%= link_to 'home', home_page_path %></span>
-<span><%= link_to 'profile', user_profile_path %></span>
-<span><%= title %></span>
-<span><%= link_to 'logout', destroy_user_session_path, method: :delete %></span>
+<div id = "navbar">
+  <span id = 'home'><%= link_to 'home', home_page_path %></span>
+  <span id = 'profile'><%= link_to 'profile', user_profile_path %></span>
+  <span id = 'page-title'><%= title %></span>
+  <span id = 'logout'><%= link_to 'logout', destroy_user_session_path, method: :delete %></span>
+</div>
