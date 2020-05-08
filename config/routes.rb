@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   end
   devise_for :users
 
+  get "/bottomtext", to: "meme#bottomtext"
+  get "/isabella", to: "meme#isabella"
   get "/home", to: "post#index", as: "home_page"
 
   get "/profile/:id", to: "profile#show", as: "show_profile"
