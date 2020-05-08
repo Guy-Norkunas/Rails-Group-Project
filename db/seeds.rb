@@ -34,14 +34,19 @@ User.all.each do |user|
 	user.posts.create(
     content: Faker::JapaneseMedia::OnePiece.quote
 	)
-  post.comments.create(
-    user_id: user.id,
-    post_id: post.id,
-    comment: Faker::TvShows::DumbAndDumber.quote
-  )
 end
 
-p 'posts and comments created 🥴💬'
+p 'posts created 🥴💬'
+
+User.all.each do |user|
+  10.times do Post.find(rand(Post.first.id..Post.last.id)).comments.create(
+    user_id: user.id,
+    comment: Faker::TvShows::DumbAndDumber.quote
+  )
+  end
+end
+
+p "comments created"
 
 Post.all.each do |post|
 		post.tags.create(
