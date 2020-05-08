@@ -1,5 +1,6 @@
-p "Seeding 💦🐶"
-user = User.create(
+p "Seeding"
+
+User.create(
   username: "admin",
   email: "admin@admin.com",
   password: "password123",
@@ -27,26 +28,30 @@ end
 p 'images created 🎆'
 
 User.all.each do |user|
-	i = 1
-  user.posts.create(
+  post = user.posts.create(
     content: Faker::Movies::StarWars.quote
   )
-	i += 1
 	user.posts.create(
     content: Faker::JapaneseMedia::OnePiece.quote
 	)
-	i += 1
+  post.comments.create(
+    user_id: user.id,
+    post_id: post.id,
+    comment: Faker::TvShows::DumbAndDumber.quote
+  )
 end
 
-p 'posts created 🥴'
+p 'posts and comments created 🥴💬'
 
 Post.all.each do |post|
-	2.times do 
 		post.tags.create(
 			tag: Faker::Dessert.variety
 		)
-	end
+		post.tags.create(
+			tag: Faker::Kpop.i_groups # 1990's og groups 
+		)
 end
 
 p 'tags created 🏷'
+
 p "complete"

@@ -1,3 +1,14 @@
-<%= render 'shared/nav', title: "#{@user.username}'s profile page"  %>
+<%= render 'shared/nav', title: "#{current_user.username}"  %>
+<div class="container">
+  <div class="row">
+    <div>profile picture</div>
+    
+  </div>
+  <div class="container">
+    <h2>posts</h2>
+    <div class="row">
+      <%= render 'shared/post', style: 'col-3' %>
+    </div>
+  </div>
+</div>
 
-<%= render 'shared/post' %>

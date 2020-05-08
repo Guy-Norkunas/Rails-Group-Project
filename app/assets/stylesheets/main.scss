@@ -1,0 +1,14 @@
+@use "sass:math";
+
+@import 'styles/shared/post';
+@import 'styles/shared/nav';
+@import 'styles/pages/login';
+
+body {
+  margin: 0px;
+  padding-top: 135px;
+}
+
+$nav-color: cornflowerblue;
+
+
